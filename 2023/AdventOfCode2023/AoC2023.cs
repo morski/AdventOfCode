@@ -12,11 +12,11 @@ namespace AdventOfCode2023
         static void Main(string[] args)
         {
             
-            BenchmarkRunner.Run<Day1>();
-            Run(new Day1());
+            //BenchmarkRunner.Run<Day1>();
+            //Run(new Day1());
             //BenchmarkRunner.Run<Day2>();
             //Day2.Run();
-            //Day3.Run();
+            Day3.Run();
             //Day4.Run();
             //Day5.Run();
             //Day6.Run();
