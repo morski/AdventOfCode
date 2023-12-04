@@ -20,10 +20,7 @@ namespace AdventOfCode2023
             double sum = 0;
             foreach (var line in lines)
             {
-                var winningNumber = line.Split(':')[1].Split('|')[0].Trim().Split(' ').Where(x => !string.IsNullOrEmpty(x)).ToList();
-                var myNumbers = line.Split(':')[1].Split('|')[1].Trim().Split(' ').Where(x => !string.IsNullOrEmpty(x)).Distinct().ToList();
-
-                var intersect = winningNumber.Intersect(myNumbers).Count();
+                var intersect = line.Split(':')[1].Split('|').Select(x => x.Trim().Split(' ').Where(x => !string.IsNullOrEmpty(x))).Aggregate((previousList, nextList) => previousList.Intersect(nextList)).Count();
 
                 if(intersect > 0)
                 {
@@ -41,16 +38,13 @@ namespace AdventOfCode2023
 
             foreach (var line in lines) 
             {
-                var x = line.Split(':')[0].Split(' ');
-                var cardNumber = int.Parse(x[x.Length - 1]) - 1;
-                var winningNumber = line.Split(':')[1].Split('|')[0].Trim().Split(' ').Where(x => !string.IsNullOrEmpty(x)).ToList();
-                var myNumbers = line.Split(':')[1].Split('|')[1].Trim().Split(' ').Where(x => !string.IsNullOrEmpty(x)).Distinct().ToList();
-                var intersect = winningNumber.Intersect(myNumbers).Count();
-                for (int j = 0; j < totalAmountOfCards[cardNumber]; j++)
+                var gameNumber = int.Parse(line.Split(':')[0].Split(' ')[^1]) - 1;
+                var intersect = line.Split(':')[1].Split('|').Select(x => x.Trim().Split(' ').Where(x => !string.IsNullOrEmpty(x))).Aggregate((previousList, nextList) => previousList.Intersect(nextList)).Count();
+                for (int j = 0; j < totalAmountOfCards[gameNumber]; j++)
                 {
                     for (int i = 0; i < intersect; i++)
                     {
-                        totalAmountOfCards[cardNumber + 1 + i] += 1;
+                        totalAmountOfCards[gameNumber + 1 + i] += 1;
                     }
                 }
             }
