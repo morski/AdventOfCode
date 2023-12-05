@@ -8,17 +8,17 @@ using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace AdventOfCode2023
 {
-    public static class Day3
+    public class Day3 : Day
     {
-        static readonly List<Tuple<int, int>> UsedCoordinates = new List<Tuple<int, int>>();
-        public static void Run()
+        private readonly string[] lines;
+        static readonly List<Tuple<int, int>> UsedCoordinates = new();
+
+        public Day3()
         {
-            var lines = File.ReadAllLines("Day3\\input");
-            Part1(lines);
-            Part2(lines);
+            lines = File.ReadAllLines("Day3\\input");
         }
 
-        private static void Part1(string[] lines)
+        public int Part1()
         {
             var grid = lines.Select(l => l.Select(c => c).ToList()).ToList();
 
@@ -36,7 +36,7 @@ namespace AdventOfCode2023
                 }
             }
  
-            Console.WriteLine(result);
+            return result;
         }
 
         private static List<int> GetConnectedNumbers(int y, int x, List<List<char>> grid) 
@@ -128,7 +128,7 @@ namespace AdventOfCode2023
             return int.Parse(number);
         }
 
-        private static void Part2(string[] lines)
+        public int Part2()
         {
             var grid = lines.Select(l => l.Select(c => c).ToList()).ToList();
 
@@ -149,7 +149,7 @@ namespace AdventOfCode2023
                 }
             }
 
-            Console.WriteLine(result);
+            return result;
         }
     }
 }

@@ -11,13 +11,10 @@ namespace AdventOfCode2023
     {
         static void Main(string[] args)
         {
-            
-            //BenchmarkRunner.Run<Day1>();
-            //Run(new Day1());
-            //BenchmarkRunner.Run<Day2>();
-            //Day2.Run();
-            //Day3.Run();
-            Day4.Run();
+            Run(new Day1());
+            Run(new Day2());
+            Run(new Day3());
+            Run(new Day4());
             //Day5.Run();
             //Day6.Run();
             //Day7.Run();
@@ -47,6 +44,7 @@ namespace AdventOfCode2023
             Console.WriteLine(day.Part1());
             Console.WriteLine("Part 2");
             Console.WriteLine(day.Part2());
+            BenchmarkRunner.Run(day.GetType());
         }
     }
 }

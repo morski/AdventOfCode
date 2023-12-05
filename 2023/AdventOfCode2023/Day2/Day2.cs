@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace AdventOfCode2023
 {
-    public class Day2
+    public class Day2 : Day
     {
         private readonly string[] lines;
 

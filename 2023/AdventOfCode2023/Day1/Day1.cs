@@ -5,6 +5,7 @@ using System.Runtime.CompilerServices;
 
 namespace AdventOfCode2023
 {
+    [BenchmarkDotNet.Attributes.NamespaceColumn, MinColumn, MaxColumn, MeanColumn, MedianColumn]
     public class Day1 : Day
     {
         private readonly string[] lines;
