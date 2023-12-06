@@ -11,12 +11,12 @@ namespace AdventOfCode2023
     {
         static void Main(string[] args)
         {
-            Run(new Day1());
-            Run(new Day2());
-            Run(new Day3());
-            Run(new Day4());
-            //Day5.Run();
-            //Day6.Run();
+            //Run(new Day1());
+            //Run(new Day2());
+            //Run(new Day3());
+            //Run(new Day4());
+            //Run(new Day5());
+            Run(new Day6());
             //Day7.Run();
             //Day8.Run();
             //Day9.Run();
@@ -40,6 +40,7 @@ namespace AdventOfCode2023
 
         private static void Run(Day day)
         {
+
             Console.WriteLine("Part 1");
             Console.WriteLine(day.Part1());
             Console.WriteLine("Part 2");
