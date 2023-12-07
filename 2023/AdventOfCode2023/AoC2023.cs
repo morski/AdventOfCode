@@ -16,8 +16,8 @@ namespace AdventOfCode2023
             //Run(new Day3());
             //Run(new Day4());
             //Run(new Day5());
-            Run(new Day6());
-            //Day7.Run();
+            //Run(new Day6());
+            Run(new Day7());
             //Day8.Run();
             //Day9.Run();
             //Day10.Run();
